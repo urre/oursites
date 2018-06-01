@@ -8,7 +8,6 @@ import './index.css'
 
 const Header = () => (
 	<header>
-		<img src="https://sprintworks.se/images/favicon.png" alt="" />
 		<h1>Sprintsites</h1>
 	</header>
 )

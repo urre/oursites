@@ -1,23 +1,33 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+/* @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500"); */
 
 body {
-    margin: 0;
-    background-color: #e1bbae;
+    margin: 3rem;
+    background-color: #feeced;
+    color: #005866;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .sprintsites-table a {
-    color: salmon;
+    color: #005866;
+    text-decoration: none;
 }
 
 .sprintsites-table td,
 .sprintsites-table th {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+    color: #005866;
+
+    /* border-bottom: none; */
+}
+
+.sprintsites-table tbody td {
+    /* border-bottom: 1px solid #005866; */
 }
 
 header {
     display: flex;
     align-items: center;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 header img {
@@ -32,12 +42,6 @@ header h1 {
 
 html {
     height: 100%;
-}
-
-body {
-    height: 100%;
-    line-height: 1.5;
-    font-family: "Roboto";
 }
 
 img {
