@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+
+body {
+    margin: 0;
+    background-color: #e1bbae;
+}
+
+.sprintsites-table a {
+    color: salmon;
+}
+
+.sprintsites-table td,
+.sprintsites-table th {
+    font-size: 1.25rem;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+
+header img {
+    max-height: 30px;
+    margin-right: 1rem;
+}
+
+header h1 {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    line-height: 1.5;
+    font-family: "Roboto";
+}
+
+img {
+    max-width: 100%;
+}
