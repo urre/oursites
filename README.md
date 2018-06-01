@@ -7,13 +7,17 @@ Collecting info about your websites. Built with [Gatsby](https://www.gatsbyjs.or
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/urre/oursites)
 
 * [Gatsby](https://www.gatsbyjs.org/) - Blazing-fast static site generator for React
-* [Contentful](https://contentful.com) as CMS
-* Hosted on [Netlify](https://netlify.com)
-* Google PageSpeed Insights. Mobile/Desktop (Coming soon: resource stats)
-* Whois data: Get registrar, expiration date
+* [Contentful](https://contentful.com) - Content infrastructure. Build-hook auto deploys to Netlify
+* [Netlify](https://netlify.com) - continuous integration and global deployment
 
-## Coming soon
+## Site data
 
+* Google PageSpeed Insights. Mobile/Desktop
+* Whois data: Registrar, Expiration date
+
+### Todo
+
+* PSUI Resource stats)
 * Codeship build statuses
 * css stats
 * Github issues/statuses
