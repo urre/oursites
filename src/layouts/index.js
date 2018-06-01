@@ -20,19 +20,7 @@ const TemplateWrapper = ({ children }) => (
 			meta={[{ name: 'description', content: 'Sample' }, { name: 'keywords', content: 'sample, something' }]}
 		/>
 		<Header />
-		<div>
-			{matches =>
-				matches ? (
-					<main>
-						<div>{children()}</div>
-					</main>
-				) : (
-					<div>
-						<div>{children()}</div>
-					</div>
-				)
-			}
-		</div>
+		<div>{children()}</div>
 	</div>
 )
 
