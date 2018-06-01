@@ -24,7 +24,6 @@
 		"format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
 		"installtools": "cd tools && yarn install",
 		"getcontent": "cd tools && node index.js",
-		"postinstall": "yarn getcontent",
 		"clean": "cd src/pages && rm -rf sites/*",
 		"publish": "yarn clean && yarn installtools && yarn getcontent && yarn build"
 	},
