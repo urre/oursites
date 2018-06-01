@@ -26,13 +26,13 @@ Collecting info about your websites. Built with [Gatsby](https://www.gatsbyjs.or
 
 ## Getting started
 
-Create an `.env` file and add your Contentful Access Token.
-
 ### Install
 
     yarn install
 
 ### Get data
+
+Create an `.env` file and add your Contentful Access Token.
 
     cd tools
 
