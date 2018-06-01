@@ -1,6 +1,6 @@
 # Our Sites
 
-> Not: Very wip
+> Note: Very wip
 
 Collecting info about your websites. Built with [Gatsby](https://www.gatsbyjs.org/). The target audience are anyone that wants to keep track of their sites.
 
@@ -10,13 +10,13 @@ Collecting info about your websites. Built with [Gatsby](https://www.gatsbyjs.or
 * [Contentful](https://contentful.com) as CMS
 * Hosted on [Netlify](https://netlify.com)
 * Google PageSpeed Insights. Mobile/Desktop (Coming soon: resource stats)
-* WhoIs data: Get registrar, expiration date
+* Whois data: Get registrar, expiration date
 
 ## Coming soon
 
-* Codeship build status
+* Codeship build statuses
 * css stats
-* Github issues/status
+* Github issues/statuses
 * Server versions
 * SSL grades
 * Trello integration
