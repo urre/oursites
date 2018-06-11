@@ -1,80 +1,56 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
+import URL from 'url-parse'
 
-import Table from '@material-ui/core/Table'
-import TableHead from '@material-ui/core/TableHead'
-import TableRow from '@material-ui/core/TableRow'
-import TableCell from '@material-ui/core/TableCell'
-import TableBody from '@material-ui/core/TableBody'
-import TableSortLabel from '@material-ui/core/TableSortLabel'
-import Tooltip from '@material-ui/core/Tooltip'
-
-const columnData = [
-	{ id: 'title', numeric: false, disablePadding: true, label: 'Site name' },
-	{
-		id: 'domain',
-		numeric: false,
-		disablePadding: false,
-		label: 'Domain'
-	},
-	{
-		id: 'registrar',
-		numeric: false,
-		disablePadding: false,
-		label: 'Registrar'
-	},
-	{
-		id: 'expiration_date',
-		numeric: false,
-		disablePadding: false,
-		label: 'Domain expires'
-	},
-	{
-		id: 'pagespeedmobile',
-		numeric: true,
-		disablePadding: false,
-		label: 'Page Speed Mobile'
-	}
-]
+const ToolBar = () => (
+	<section className="toolbar">
+		<div className="toolbar-left">
+			<h2 className="toolbar-amount">
+				Sites <span className="toolbar-amount-number">(5)</span>
+			</h2>
+		</div>
+	</section>
+)
 
 class SiteTable extends React.Component {
-	createSortHandler = property => event => {
-		this.props.onRequestSort(event, property)
+	cleanURL(siteUrl) {
+		const url = new URL(siteUrl)
+		return url.hostname
 	}
 
 	render() {
-		const { onSelectAllClick, order, orderBy, numSelected, rowCount, posts } = this.props
+		const { posts } = this.props
 
 		return (
-			<Table className="sprintsites-table">
-				<TableHead>
-					<TableRow>
-						{columnData.map(column => {
-							return (
-								<TableCell key={column.id} sortDirection={orderBy === column.id ? order : false}>
-									<TableSortLabel>{column.label}</TableSortLabel>
-								</TableCell>
-							)
-						}, this)}
-					</TableRow>
-				</TableHead>
-				<TableBody>
+			<section>
+				<ToolBar />
+				<ul className="oursites">
+					<li class="oursites-item oursites-item-header">
+						<span className="oursites-item-title">Name</span>
+						<span className="oursites-item-url">URL</span>
+
+						<span className="oursites-item-registrar">Registrar</span>
+						<span className="oursites-item-expiration_date">Domain Expiration Date</span>
+						<span className="oursites-item-page_speed_mobile">Google Page Speed Mobile</span>
+					</li>
+
 					{posts.filter(post => post.node.frontmatter.title.length > 0).map(({ node: post }) => {
 						return (
-							<TableRow key={post.id}>
-								<TableCell>{post.frontmatter.title}</TableCell>
-								<TableCell>
-									<a href={post.frontmatter.url}>{post.frontmatter.url}</a>
-								</TableCell>
-								<TableCell>{post.frontmatter.registrar}</TableCell>
-								<TableCell>{post.frontmatter.expiration_date}</TableCell>
-								<TableCell>{post.frontmatter.page_speed_mobile}</TableCell>
-							</TableRow>
+							<li class="oursites-item" key={post.id}>
+								<span className="oursites-item-title">{post.frontmatter.title}</span>
+								<span className="oursites-item-url">
+									<a href={post.frontmatter.url}>{this.cleanURL(post.frontmatter.url)}</a>
+								</span>
+
+								<span className="oursites-item-registrar">{post.frontmatter.registrar}</span>
+								<span className="oursites-item-expiration_date">{post.frontmatter.expiration_date}</span>
+								<span className="oursites-item-page_speed_mobile">{post.frontmatter.page_speed_mobile}</span>
+							</li>
 						)
 					})}
-				</TableBody>
-			</Table>
+				</ul>
+			</section>
 		)
 	}
 }

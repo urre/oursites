@@ -7,20 +7,31 @@ import Media from 'react-media'
 import './index.css'
 
 const Header = () => (
-	<header>
-		<h1>Sprintsites</h1>
+	<header class="header" role="banner">
+		<h1 class="header-logo">Our Sites</h1>
 	</header>
 )
 
+const Footer = () => (
+	<footer class="footer" role="contentinfo">
+		<p>
+		<small>
+			By <a href="https://urre.me">Urban Sanden</a>
+		</small>
+		</p>
+	</footer>
+)
+
 const TemplateWrapper = ({ children }) => (
-	<div>
+	<main>
 		<Helmet
 			title="Gatsby Default Starter"
 			meta={[{ name: 'description', content: 'Sample' }, { name: 'keywords', content: 'sample, something' }]}
 		/>
 		<Header />
-		<div>{children()}</div>
-	</div>
+		<section className="site-content">{children()} </section>
+		<Footer/>
+	</main>
 )
 
 TemplateWrapper.propTypes = {
