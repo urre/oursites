@@ -31,7 +31,7 @@ client
 			let expiration_date
 
 			// Google Pagespeed Index
-			psi(entry.fields.url, { nokey: 'true', strategy: 'mobile' })
+			psi(entry.fields.url, { nokey: 'true', strategy: 'desktop' })
 				.then(data => {
 					pageSpeedMobile = data.ruleGroups.SPEED.score
 				})
