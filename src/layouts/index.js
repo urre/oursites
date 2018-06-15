@@ -7,17 +7,17 @@ import Media from 'react-media'
 import './index.css'
 
 const Header = () => (
-	<header class="header" role="banner">
-		<h1 class="header-logo">Our Sites</h1>
+	<header className="header" role="banner">
+		<h1 className="header-logo">Our Sites</h1>
 	</header>
 )
 
 const Footer = () => (
-	<footer class="footer" role="contentinfo">
+	<footer className="footer" role="contentinfo">
 		<p>
-		<small>
-			By <a href="https://urre.me">Urban Sanden</a>
-		</small>
+			<small>
+				By <a href="https://urre.me">Urban Sanden</a>
+			</small>
 		</p>
 	</footer>
 )
@@ -30,7 +30,7 @@ const TemplateWrapper = ({ children }) => (
 		/>
 		<Header />
 		<section className="site-content">{children()} </section>
-		<Footer/>
+		<Footer />
 	</main>
 )
 

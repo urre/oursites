@@ -26,6 +26,7 @@ client
 	.then(function(entries) {
 		// console.dir(entries, {depth: null, colors: true})
 		entries.items.forEach(function(entry) {
+			let pageSpeedDesktop
 			let pageSpeedMobile
 			let registrar
 			let expiration_date
@@ -33,7 +34,7 @@ client
 			// Google Pagespeed Index
 			psi(entry.fields.url, { nokey: 'true', strategy: 'desktop' })
 				.then(data => {
-					pageSpeedMobile = data.ruleGroups.SPEED.score
+					pageSpeedDesktop = data.ruleGroups.SPEED.score
 				})
 				// Whois
 				.then(
@@ -42,6 +43,10 @@ client
 						registrar = result.registrar
 					})
 				)
+			psi(entry.fields.url, { nokey: 'true', strategy: 'mobile' })
+				.then(data => {
+					pageSpeedMobile = data.ruleGroups.SPEED.score
+				})
 				.then(() => {
 					// Save Markdown file
 					let rightNow = new Date()
@@ -57,6 +62,11 @@ client
 
 					const path = `${slugify(entry.fields.name)}`
 					const name = `${entry.fields.name}`
+					const github_repo = entry.fields.repoUrl
+					const codeship_pid = entry.fields.codeshipProjectId
+					const codeship_uuid = entry.fields.codeshipProjectUid
+					const description = entry.fields.description
+
 					const folderName = `../src/pages/sites/${slugify(fileName, {
 						replacement: '-',
 						lower: true
@@ -67,7 +77,7 @@ client
 						lower: true
 					})}"\ndate: "${now}"\nurl: "${
 						entry.fields.url
-					}"\ntitle: "${name}"\nregistrar: "${registrar}"\nexpiration_date: "${expiration_date}"\npage_speed_mobile: "${pageSpeedMobile}"\n---\n\n`
+					}"\ntitle: "${name}"\nregistrar: "${registrar}"\nexpiration_date: "${expiration_date}"\npage_speed_desktop: "${pageSpeedDesktop}"\npage_speed_mobile: "${pageSpeedMobile}"\ncodeship_pid: "${codeship_pid}"\ncodeship_uuid: "${codeship_uuid}"\ngithub_repo: "${github_repo}"\ndescription: "${description}"\n---\n\n`
 
 					if (!fs.existsSync(folderName)) {
 						fs.mkdirSync(folderName)
@@ -76,7 +86,7 @@ client
 						if (err) {
 							return console.log(err)
 						}
-						console.log('The file was saved!')
+						console.log(`${name} was saved!`)
 					})
 				})
 		})

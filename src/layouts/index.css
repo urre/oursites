@@ -25,7 +25,7 @@ a {
 
 /* Site Content */
 .site-content {
-    max-width: 90em;
+    max-width: 95%;
     margin: 0 auto;
     padding-left: .5rem;
     padding-right: .5rem;
@@ -59,7 +59,8 @@ a {
     margin: 0;
     display: flex;
     flex-direction: column;
-    padding: 2rem 8%;
+
+    /* padding: 2rem 8%; */
     flex-wrap: wrap;
 }
 
@@ -68,6 +69,7 @@ a {
         flex-wrap: inherit;
     }
 }
+
 .oursites-item {
     margin-bottom: 1rem;
     display: flex;
@@ -76,6 +78,7 @@ a {
     padding: 1.25rem 1rem;
     background-color: #fff;
     border-radius: .2rem .2rem;
+
     /* box-shadow: 0 7px 14px 0 rgba(0, 0, 0, 0.07), 0 11px 14px 0 rgba(0, 0, 0, 0.04); */
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.07), 0 1px 4px 0 rgba(0, 0, 0, 0.04);
     flex-wrap: wrap;
@@ -92,7 +95,7 @@ a {
 
 @media (min-width: 40em) {
     .oursites-item {
-        flex-wrap: inherit;
+        /* flex-wrap: inherit; */
     }
 }
 
@@ -107,9 +110,38 @@ a {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    padding: 2rem 8%;
+    padding-top: 4rem;
+
+    /* padding: 2rem 8%; */
 }
 
 .toolbar-amount {
     font-size: 1.5rem;
+}
+
+.oursites-item-details {
+    flex: 0 0 100%;
+}
+
+.oursites-item .pill {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background-color: #f2f2f2;
+    color: #666;
+    padding: .25rem .35rem;
+    display: inline-block;
+}
+
+.oursites-item .pill-desktop {
+    background-color: #cccc;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.details {
+    min-width: 100%;
+    background-color: red;
+    flex: 0 0 100%;
 }

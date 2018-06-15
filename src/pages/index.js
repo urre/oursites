@@ -24,7 +24,11 @@ export const pageQuery = graphql`
 						url
 						registrar
 						expiration_date
+						github_repo
+						codeship_pid
+						codeship_uuid
 						page_speed_mobile
+						page_speed_desktop
 					}
 				}
 			}
