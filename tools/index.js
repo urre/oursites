@@ -8,6 +8,8 @@ const slugify = require('slugify')
 const dayjs = require('dayjs')
 const whois = require('whois-api')
 const url = require('url')
+const grabity = require('grabity')
+
 require('dotenv').load()
 
 const client = contentful.createClient({
@@ -31,22 +33,36 @@ client
 			let registrar
 			let expiration_date
 
-			// Google Pagespeed Index
-			psi(entry.fields.url, { nokey: 'true', strategy: 'desktop' })
+			// Google Pagespeed Index Desktop
+			psi(entry.fields.url, {
+				nokey: 'true',
+				strategy: 'desktop'
+			}).then(data => {
+				pageSpeedDesktop = data.ruleGroups.SPEED.score !== undefined ? data.ruleGroups.SPEED.score : ''
+			})
+			// Google Pagespeed Index Mobile
+			psi(entry.fields.url, {
+				nokey: 'true',
+				strategy: 'mobile'
+			})
 				.then(data => {
-					pageSpeedDesktop = data.ruleGroups.SPEED.score
+					pageSpeedMobile = data.ruleGroups.SPEED.score !== undefined ? data.ruleGroups.SPEED.score : ''
 				})
 				// Whois
 				.then(
 					whois.lookup(url.parse(entry.fields.url).host, (error, result) => {
-						expiration_date = result.expiration_date
-						registrar = result.registrar
+						expiration_date = result.expiration_date !== undefined ? result.expiration_date : ''
+						registrar = result.registrar !== undefined ? result.registrar : ''
 					})
 				)
-			psi(entry.fields.url, { nokey: 'true', strategy: 'mobile' })
-				.then(data => {
-					pageSpeedMobile = data.ruleGroups.SPEED.score
-				})
+				// Get Meta tags
+				// .then(
+				// (async () => {
+				// let it = await grabity.grab(entry.fields.url)
+
+				// console.log(it['twitter:image'])
+				// })()
+				// )
 				.then(() => {
 					// Save Markdown file
 					let rightNow = new Date()
