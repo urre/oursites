@@ -4,28 +4,15 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import Media from 'react-media'
 
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+
 import './index.css'
-
-const Header = () => (
-	<header className="header" role="banner">
-		<h1 className="header-logo">Our Sites</h1>
-	</header>
-)
-
-const Footer = () => (
-	<footer className="footer" role="contentinfo">
-		<p>
-			<small>
-				By <a href="https://urre.me">Urban Sanden</a>
-			</small>
-		</p>
-	</footer>
-)
 
 const TemplateWrapper = ({ children }) => (
 	<main>
 		<Helmet
-			title="Gatsby Default Starter"
+			title="Our Sites"
 			meta={[{ name: 'description', content: 'Sample' }, { name: 'keywords', content: 'sample, something' }]}
 		/>
 		<Header />
