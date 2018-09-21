@@ -17,21 +17,26 @@ class SiteTable extends React.Component {
 		return (
 			<section>
 				<ToolBar amount={posts.length} />
-				<ul className="oursites">
-					<li className="oursites-item oursites-item-header">
-						<span className="oursites-item-title">Name</span>
-						<span className="oursites-item-url">URL</span>
+				<div className="oursiteContainer">
+					<table className="oursites">
+						<thead className="oursites-item oursites-item-header">
+							<tr>
+								<th className="oursites-item-title">Name</th>
+								<th className="oursites-item-url">URL</th>
 
-						<span className="oursites-item-registrar">Registrar</span>
-						<span className="oursites-item-expiration_date">Domain Expiration Date</span>
-						<span className="oursites-item-page_speed">PSI Mobile/Desktop</span>
-						<span className="oursites-item-codeship">Codeship build</span>
-					</li>
+								<th className="oursites-item-registrar">Registrar</th>
+								<th className="oursites-item-expiration_date">Domain Expiration Date</th>
+								<th className="oursites-item-page_speed">PageSpeedIndex Mobile/Desktop</th>
+								<th className="oursites-item-codeship">CSS Size</th>
+								<th className="oursites-item-codeship">JS Size</th>
+							</tr>
+						</thead>
 
-					{posts.filter(post => post.node.frontmatter.title.length > 0).map(({ node: post }) => {
-						return <SiteTableItem key={post.id} {...post} />
-					})}
-				</ul>
+						{posts.filter(post => post.node.frontmatter.title.length > 0).map(({ node: post }) => {
+							return <SiteTableItem key={post.id} {...post} />
+						})}
+					</table>
+				</div>
 			</section>
 		)
 	}

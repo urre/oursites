@@ -27,6 +27,8 @@ export const pageQuery = graphql`
 						github_repo
 						codeship_pid
 						codeship_uuid
+						css_size
+						js_size
 						page_speed_mobile
 						page_speed_desktop
 					}
