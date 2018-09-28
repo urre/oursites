@@ -42,7 +42,7 @@ class SiteTableItem extends React.Component {
 
 	render() {
 		const info = this.props
-		console.log(info)
+
 		return (
 			<tr className={`oursites-item ${this.state.active ? 'active' : null}`}>
 				<td className="oursites-item-title">

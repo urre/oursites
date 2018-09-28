@@ -9,10 +9,19 @@ import SiteTableItem from './SiteTableItem'
 class SiteTable extends React.Component {
 	constructor(props) {
 		super(props)
+		this.state = {
+			data: []
+		}
+	}
+
+	componentWillMount() {
+		this.setState({
+			data: this.props
+		})
 	}
 
 	render() {
-		const { posts } = this.props
+		const { posts } = this.state.data
 
 		return (
 			<section>
@@ -31,10 +40,11 @@ class SiteTable extends React.Component {
 								<th className="oursites-item-codeship">JS Size</th>
 							</tr>
 						</thead>
-
-						{posts.filter(post => post.node.frontmatter.title.length > 0).map(({ node: post }) => {
-							return <SiteTableItem key={post.id} {...post} />
-						})}
+						<tbody>
+							{posts.filter(post => post.node.frontmatter.title.length > 0).map(({ node: post }) => {
+								return <SiteTableItem key={post.id} {...post} />
+							})}
+						</tbody>
 					</table>
 				</div>
 			</section>

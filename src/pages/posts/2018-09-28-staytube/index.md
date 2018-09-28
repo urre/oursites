@@ -1,6 +1,6 @@
 ---
 path: "/staytube"
-date: "2018-09-21"
+date: "2018-09-28"
 url: "https://staytu.be/"
 title: "Staytube"
 registrar: "Ascio Technologies Inc. Danmark - filial af Ascio"
@@ -12,6 +12,6 @@ codeship_uuid: "undefined"
 css_size: "11.9 kB"
 js_size: "438.9 kB"
 github_repo: "https://github.com/urre/staytube"
-description: "Dedicated to great full length concerts. Exploring the concept of using "Youtube as a CMS"."
+description: "Dedicated to great full length concerts. Exploring the concept of using Youtube as a CMS"
 ---
 

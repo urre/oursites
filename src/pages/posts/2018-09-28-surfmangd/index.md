@@ -1,11 +1,11 @@
 ---
 path: "/surfmangd"
-date: "2018-09-21"
+date: "2018-09-28"
 url: "https://surfmangd.se/"
 title: "Surfmängd"
 registrar: "Loopia AB"
 expiration_date: "2019-03-29"
-page_speed_desktop: "86"
+page_speed_desktop: "undefined"
 page_speed_mobile: "71"
 codeship_pid: "undefined"
 codeship_uuid: "undefined"

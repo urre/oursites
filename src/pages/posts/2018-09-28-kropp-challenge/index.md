@@ -1,6 +1,6 @@
 ---
 path: "/kropp-challenge"
-date: "2018-09-21"
+date: "2018-09-28"
 url: "https://kroppchallenge.se/"
 title: "Kropp Challenge"
 registrar: "Loopia AB"

@@ -74,7 +74,7 @@ client
 					const codeship_uuid = entry.fields.codeshipProjectUid
 					const description = entry.fields.description
 
-					const folderName = `../src/pages/sites/${slugify(fileName, {
+					const folderName = `../src/pages/posts/${slugify(fileName, {
 						replacement: '-',
 						lower: true
 					})}`

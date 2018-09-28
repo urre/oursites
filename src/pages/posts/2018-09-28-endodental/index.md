@@ -1,6 +1,6 @@
 ---
 path: "/endodental"
-date: "2018-09-21"
+date: "2018-09-28"
 url: "https://endodental.se/"
 title: "Endodental"
 registrar: "Domanregister.se"
@@ -14,3 +14,4 @@ js_size: "279.3 kB"
 github_repo: "undefined"
 description: "undefined"
 ---
+
