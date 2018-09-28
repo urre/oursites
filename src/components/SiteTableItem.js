@@ -18,7 +18,7 @@ class SiteTableItem extends React.Component {
 
 	psiInsightsLink(url, strategy) {
 		const psiBase = `https://developers.google.com/speed/pagespeed/insights/`
-		return encodeURIComponent(`${psiBase}${url}&tab=${strategy}`)
+		return `${psiBase}/?url=${encodeURIComponent(url)}&tab=${strategy}`
 	}
 
 	codeshipBadgeURL(uuid, branch) {

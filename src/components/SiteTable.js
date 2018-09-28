@@ -22,6 +22,7 @@ class SiteTable extends React.Component {
 
 	render() {
 		const { posts } = this.state.data
+		console.log(posts)
 
 		return (
 			<section>
