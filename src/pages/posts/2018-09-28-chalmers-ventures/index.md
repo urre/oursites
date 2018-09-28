@@ -10,7 +10,7 @@ page_speed_mobile: "52"
 codeship_pid: "undefined"
 codeship_uuid: "undefined"
 css_size: "118.2 kB"
-js_size: "394.9 kB"
+js_size: "394.8 kB"
 github_repo: "undefined"
 description: "undefined"
 ---

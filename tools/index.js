@@ -18,7 +18,7 @@ const client = contentful.createClient({
 	accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
 })
 
-const postsPerPage = 50
+const postsPerPage = 20
 
 client
 	.getEntries({
